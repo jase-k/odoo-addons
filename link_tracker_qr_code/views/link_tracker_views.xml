@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_link_tracker_tree_inherit" model="ir.ui.view">
+        <field name="name">link.tracker.tree.inherit</field>
+        <field name="model">link.tracker</field>
+        <field name="inherit_id" ref="link_tracker.link_tracker_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='url']" position="after">
+                <button name="download_qr_code" type="object" string="Download QR Code" icon="fa-download"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
