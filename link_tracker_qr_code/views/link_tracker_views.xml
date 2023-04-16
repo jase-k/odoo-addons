@@ -10,4 +10,21 @@
             </xpath>
         </field>
     </record>
+        <!-- Inherit and modify the original view -->
+    <record id="link_tracker_view_form_inherit" model="ir.ui.view">
+        <field name="name">link.tracker.form.inherit</field>
+        <field name="model">link.tracker</field>
+        <field name="inherit_id" ref="link_tracker.link_tracker_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add use_company_logo field -->
+            <xpath expr="//field[@name='title']" position="after">
+                <field name="use_company_logo"/>
+            </xpath>
+
+            <!-- Add company_id field -->
+            <xpath expr="//field[@name='title']" position="after">
+                <field name="company_id" attrs="{'invisible': [('use_company_logo', '=', False)]}" />
+            </xpath>
+        </field>
+    </record>
 </odoo>

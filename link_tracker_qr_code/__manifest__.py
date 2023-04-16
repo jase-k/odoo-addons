@@ -13,6 +13,9 @@
     'data': [
         'views/link_tracker_views.xml',
     ],
+    'external_dependencies': {
+        'python': ['qrcode', 'Pillow'],
+    },
     'demo': [],
     'installable': True,
     'auto_install': False,
