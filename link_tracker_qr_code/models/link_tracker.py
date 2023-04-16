@@ -17,7 +17,7 @@ class LinkTracker(models.Model):
 
     @api.model
     def create(self, vals):
-        _logger.info('LinkTracker creating...........')
+        _logger.info('LinkTracker creating.........')
         link_tracker = super(LinkTracker, self).create(vals)
         if link_tracker:
             qr_code_image = qrcode.make(link_tracker.short_url)
